@@ -34,7 +34,7 @@ class ModuloController extends Controller
         $nome = $modulo->nome;
         $modulo->delete();
 
-        session()->flash('mensagem', "Módulo {$nome} excluída com sucesso.");
+        session()->flash('mensagem', "Módulo {$nome} excluído com sucesso.");
         
         return redirect()->route('modulos.show');
     }
