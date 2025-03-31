@@ -19,26 +19,5 @@
     </div>
     <hr>
     <input type="submit" value="Salvar mudanças" class="btn btn-success" />
-    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalExcluir">
-        Excluir
-    </button>
 </form>
-
-<div class="modal" tabindex="-1" id="modalExcluir">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Exclusão</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Deseja realmente excluir o(a) estudante <b>{{ $estudante->nome }}</b>?</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <a href="{{ route('estudantes.excluir', ['id' => $estudante->id]) }}" class="btn btn-outline-danger">Excluir</a>
-      </div>
-    </div>
-  </div>
-</div>
 @endsection

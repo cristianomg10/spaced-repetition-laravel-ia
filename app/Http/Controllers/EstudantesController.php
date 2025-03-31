@@ -28,6 +28,7 @@ class EstudantesController extends Controller
         $estudante = Estudante::findOrFail($id);
         
         $nome = $estudante->nome;
+        $matricula = $estudante->matricula;
         $estudante->delete();
 
         session()->flash('mensagem', "Módulo {$nome} excluída com sucesso.");
@@ -46,7 +47,7 @@ class EstudantesController extends Controller
             $operacao = "alterado";
         }     
         $estudante->nome = $req->nome;
-        $estudante->disciplina_id = $req->disciplina_id;
+        $estudante->matricula = $req->matricula;
 
         $estudante->save();
 
