@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DisciplinasController;
 use App\Http\Controllers\ModulosController;
-use App\Http\Controllers\EstudanteController;
+use App\Http\Controllers\EstudantesController;
 
 Route::get('/', function(){
     return view('main');

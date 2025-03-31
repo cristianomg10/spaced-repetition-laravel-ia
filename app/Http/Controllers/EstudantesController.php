@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Model\Estudante;
+use App\Models\Estudante;
 
 class EstudantesController extends Controller
 {
     function show(){
-        $estudantes = Modulo::all();
+        $estudantes = Estudante::all();
 
         return view('estudantes.show', ['estudantes' => $estudantes]);
     }
