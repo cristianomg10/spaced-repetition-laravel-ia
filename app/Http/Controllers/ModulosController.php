@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Modulo;
 use App\Models\Disciplina;
 
-class ModuloController extends Controller
+class ModulosController extends Controller
 {
     function show(){
         $modulos = Modulo::all();
