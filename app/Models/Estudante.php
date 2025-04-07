@@ -9,6 +9,6 @@ use App\Models\Disciplina;
 class Estudante extends Model
 {
     function disciplinas() {
-        return $this->hasMany(Disciplina::class);
+        return $this->belongsToMany(Disciplina::class);
     }
 }
