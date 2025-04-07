@@ -22,7 +22,10 @@
                 <tr>
                     <td>{{ $disciplina->id }}</td>
                     <td>{{ $disciplina->nome }}</td>
-                    <td><a class="btn btn-warning" href="{{ route('disciplinas.editar', ['id' => $disciplina->id ]) }}">Editar</a></td>
+                    <td>
+                        <a class="btn btn-sm btn-warning" href="{{ route('disciplinas.editar', ['id' => $disciplina->id ]) }}">Editar</a>
+                        <a class="btn btn-sm btn-info" href="{{ route('disciplinas.estudantes', ['id' => $disciplina->id ]) }}">Estudantes</a>
+                    </td>
                 </tr>
                 @endforeach    
             </tbody>

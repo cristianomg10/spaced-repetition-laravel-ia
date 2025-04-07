@@ -5,12 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Disciplina;
 
-class DisciplinaController extends Controller
+class DisciplinasController extends Controller
 {
     function show(){
         $disciplinas = Disciplina::all();
 
         return view('disciplinas.show', ['disciplinas' => $disciplinas]);
+    }
+
+    function estudantes($id){
+        $disciplina = Disciplina::findOrFail($id);
+
+        return view('disciplinas.estudantes', ['disciplina' => $disciplina]);
     }
 
     function novo(){

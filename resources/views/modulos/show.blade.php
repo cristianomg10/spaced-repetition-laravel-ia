@@ -17,7 +17,7 @@
         <tr>
             <td>{{ $modulo->id }}</td>
             <td>{{ $modulo->nome }}</td>
-            <td>{{ $modulo->disciplina_id }}</td>
+            <td>{{ $modulo->disciplina->nome }}</td>
             <td><a class="btn btn-warning btn-sm" href="{{ route('modulos.editar', ['id' => $modulo->id ]) }}">Editar</a></td>
         </tr>
         @endforeach

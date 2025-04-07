@@ -24,7 +24,7 @@
                     <td>{{ $estudante->id }}</td>
                     <td>{{ $estudante->nome }}</td>
                     <td>{{ $estudante->matricula }}</td>
-                    <td><a class="btn btn-warning" href="{{ route('estudantes.editar', ['id' => $estudante->id ]) }}">Editar</a></td>
+                    <td><a class="btn btn-warning btn-sm" href="{{ route('estudantes.editar', ['id' => $estudante->id ]) }}">Editar</a></td>
                 </tr>
                 @endforeach    
             </tbody>

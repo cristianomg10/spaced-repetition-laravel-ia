@@ -13,6 +13,7 @@ Route::prefix('/disciplinas')->controller(DisciplinasController::class)->group(f
     Route::get('/show', 'show')->name('disciplinas.show');
     Route::get('/novo', 'novo')->name('disciplinas.novo');
     Route::get('/editar/{id}', 'editar')->name('disciplinas.editar');
+    Route::get('/estudantes/{id}', 'estudantes')->name('disciplinas.estudantes');
     Route::get('/excluir/{id}', 'excluir')->name('disciplinas.excluir');
     Route::post('/salvar/{id?}', 'salvar')->name('disciplinas.salvar');
 });
