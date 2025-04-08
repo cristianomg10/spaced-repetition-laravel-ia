@@ -6,7 +6,7 @@ use App\Http\Controllers\DisciplinasController;
 use App\Http\Controllers\ModulosController;
 use App\Http\Controllers\EstudantesController;
 
-Route::prefix('/disciplinas')->controller(DisciplinasController::class)->middleware('auth')->group(function(){
+Route::prefix('/disciplinas')->controller(DisciplinasController::class)->group(function(){
     Route::get('/show', 'show')->name('disciplinas.show');
     Route::get('/novo', 'novo')->name('disciplinas.novo');
     Route::get('/editar/{id}', 'editar')->name('disciplinas.editar');
@@ -29,7 +29,10 @@ Route::prefix('/estudantes')->controller(EstudantesController::class)->group(fun
     Route::get('/editar/{id}', 'editar')->name('estudantes.editar');
     Route::get('/excluir/{id}', 'excluir')->name('estudantes.excluir');
     Route::post('/salvar/{id?}', 'salvar')->name('estudantes.salvar');
+    Route::post('/subscrever', 'subscrever')->name('estudantes.subscrever');
+    Route::get('/subscrever/{id}/{disciplina_id}', 'showSubscrever')->name('estudantes.showSubscrever');
 });
+
 
 Route::get('/', function(){
     return view('main');
