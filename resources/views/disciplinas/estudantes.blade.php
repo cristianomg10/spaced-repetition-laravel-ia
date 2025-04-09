@@ -4,9 +4,9 @@
 <h1>Disciplina <b>{{ $disciplina->nome }}</b></h1>
 <h2>Estudantes vinculados</h2>
 
-@if(session()->has('mensagem'))
-    <div class="alert alert-info">{{ session('mensagem') }}</div>
-@endif
+@error('usuario')
+    <div class="alert alert-info">{{ $message }}</div>
+@enderror
 
 <div>
     @if(count($disciplina->estudantes) > 0)

@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img src="{{ asset('imgs/logo.png') }}" alt="Bootstrap" height="50">
@@ -28,6 +28,17 @@
                 <li><a class="dropdown-item" href="{{ route('disciplinas.show') }}">Disciplinas</a></li>
                 <li><a class="dropdown-item" href="{{ route('modulos.show') }}">Módulos</a></li>
                 <li><a class="dropdown-item" href="{{ route('estudantes.show') }}">Estudantes</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Configurações
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="{{ route('disciplinas.show') }}">Configurações</a></li>
+                <li><a class="dropdown-item" href="{{ route('logout') }}">Sair</a></li>
               </ul>
             </li>
           </ul>
