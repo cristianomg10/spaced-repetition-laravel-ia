@@ -4,7 +4,7 @@
     <h1>Lista de Estudantes</h1>
 
     @if(session()->has('mensagem'))
-        <div class="alert alert-info">{{ session('mensagem') }}</div>
+        <div class="alert alert-info">{!! session('mensagem') !!}</div>
     @endif
 
     <div>

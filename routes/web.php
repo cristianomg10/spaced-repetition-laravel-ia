@@ -11,6 +11,7 @@ Route::prefix('/disciplinas')->controller(DisciplinasController::class)->group(f
     Route::get('/novo', 'novo')->name('disciplinas.novo');
     Route::get('/editar/{id}', 'editar')->name('disciplinas.editar');
     Route::get('/estudantes/{id}', 'estudantes')->name('disciplinas.estudantes');
+    Route::get('/estudantes/{id}/remover/{id_estudante}', 'removerEstudante')->name('disciplinas.estudante.remover');
     Route::get('/excluir/{id}', 'excluir')->name('disciplinas.excluir');
     Route::post('/salvar/{id?}', 'salvar')->name('disciplinas.salvar');
 });
@@ -30,7 +31,7 @@ Route::prefix('/estudantes')->controller(EstudantesController::class)->group(fun
     Route::get('/excluir/{id}', 'excluir')->name('estudantes.excluir');
     Route::post('/salvar/{id?}', 'salvar')->name('estudantes.salvar');
     Route::post('/subscrever', 'subscrever')->name('estudantes.subscrever');
-    Route::get('/subscrever/{id}/{disciplina_id}', 'showSubscrever')->name('estudantes.showSubscrever');
+    Route::get('/subscrever/{id}', 'showSubscrever')->name('estudantes.showSubscrever');
 });
 
 

@@ -57,23 +57,24 @@ class EstudantesController extends Controller
         return redirect()->route('estudantes.show');
     }
 
-    function showSubscrever($id_discplina){
-        $estudantes = Estudante::all();
+    function showSubscrever($id){
+        $estudante = Estudante::findOrFail($id);
+        $disciplinas = Disciplina::all();
 
-        return view('disciplinas.agregar_estudante', ['estudantes' => $estudantes]);
+        return view('disciplinas.agregar_estudante', ['estudante' => $estudante, 'disciplinas' => $disciplinas]);
     }
 
-    function subscrever(Request $req, $id, $disciplina_id){
-        $estudante = Estudante::findOrFail($id);
-        $disciplina = Disciplina::findOrFail($disciplina_id);
+    function subscrever(Request $req){
+        $estudante = Estudante::findOrFail($req->id);
+        $disciplina = Disciplina::findOrFail($req->disciplina_id);
 
-        if ($disciplina->estudantes()->where('estudante_id', '=', $id)->count() == 0){
+        if ($disciplina->estudantes()->where('estudante_id', '=', $estudante->id)->count() == 0){
             $disciplina->estudantes()->attach($estudante, ['oferta' => env('OFERTA')]);
-            session()->flash('mensagem', "Estudante {$estudante->nome} subscreveu com sucesso na disciplina {$disciplina->nome}.");
+            session()->flash('mensagem', "Estudante <b>{$estudante->nome}</b> subscreveu com sucesso na disciplina <b>{$disciplina->nome}</b>.");
         } else {
-            session()->flash('mensagem', "Estudante {$estudante->nome} já estava subscrito na disciplina {$disciplina->nome}.");
+            session()->flash('mensagem', "Estudante <b>{$estudante->nome}</b> já estava subscrito na disciplina <b>{$disciplina->nome}</b>.");
         }
 
-        return redirect()->route('');
+        return redirect()->route('estudantes.show');
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Disciplina;
+use App\Models\Estudante;
 
 class DisciplinasController extends Controller
 {
@@ -17,6 +18,15 @@ class DisciplinasController extends Controller
         $disciplina = Disciplina::findOrFail($id);
 
         return view('disciplinas.estudantes', ['disciplina' => $disciplina]);
+    }
+
+    function removerEstudante($id, $id_estudante){
+        $disciplina = Disciplina::findOrFail($id);
+        $estudante = Estudante::findOrFail($id_estudante);
+
+        $disciplina->estudantes()->detach($estudante);
+
+        return redirect(route('disciplinas.estudantes', ['id' => $disciplina->id]));
     }
 
     function novo(){
